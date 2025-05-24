@@ -39,5 +39,9 @@ nodejs 'Node_24'
             failure{
                 echo 'Pipeline con errores'
             }
+            always {
+                emailext ( subject: "Pipeline ${currentBuild.result}: ucp-app-react #${env.BUILD_NUMBER}", 
+                body: """ Estado: ${currentBuild.result} URL Build: ${env.BUILD_URL} Detalles de Pruebas: ${env.BUILD_URL}testReport/ """, 
+                to: 'carlos8064@gmail.com' )
         }
     }
