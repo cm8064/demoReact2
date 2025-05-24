@@ -44,13 +44,10 @@ pipeline {
             echo 'Pipeline con errores'
         }
         always {
-            emailext(
-                //subject: "Pipeline ${currentBuild.result}: ucp-app-react #${env.BUILD_NUMBER}",
-                //body: """ Estado: ${currentBuild.result} URL Build: ${env.BUILD_URL} Detalles de Pruebas: ${env.BUILD_URL}testReport/ """,
-                //to: 'carlos8064@gmail.com'
-                subject: "Demo Jenkins Local", body: "Mensaje de prueba", to: "cm8064@gmail.com"
-
-
+            mail(
+                to: 'carlos8064@gmail.com',
+                subject: "Build Status: ${currentBuild.currentResult}",
+                body: "Job: ${env.JOB_NAME}\nEstado: ${currentBuild.currentResult}\nURL: ${env.BUILD_URL}"
             )
         }
     }
