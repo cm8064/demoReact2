@@ -48,7 +48,7 @@ pipeline {
                 //subject: "Pipeline ${currentBuild.result}: ucp-app-react #${env.BUILD_NUMBER}",
                 //body: """ Estado: ${currentBuild.result} URL Build: ${env.BUILD_URL} Detalles de Pruebas: ${env.BUILD_URL}testReport/ """,
                 //to: 'carlos8064@gmail.com'
-                subject: "demo", body: "correo de prueba", to: "carlos8064@gmail.com"
+                subject: "Demo Jenkins Local", body: "Mensaje de prueba", to: "cm8064@gmail.com"
 
 
             )
