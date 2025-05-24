@@ -15,7 +15,7 @@ nodejs 'Node_24'
         stage('Build') {
             steps {
                 echo 'Step 2 - Compilación'
-                sh 'my-app'
+                sh 'cd my-app'
                 sh 'npm install'
                 sh 'npm run build'
             }
